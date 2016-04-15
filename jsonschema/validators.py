@@ -11,9 +11,10 @@ except ImportError:
 
 from jsonschema import _utils, _validators
 from jsonschema.compat import (
-    Sequence, urljoin, urlsplit, urldefrag, unquote, urlopen,
+    Sequence, urljoin, urlsplit, urldefrag, unquote,
     str_types, int_types, iteritems, lru_cache,
 )
+from urllib import urlopen
 from jsonschema.exceptions import ErrorTree  # Backwards compatibility  # noqa
 from jsonschema.exceptions import RefResolutionError, SchemaError, UnknownType
 

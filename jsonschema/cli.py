@@ -4,6 +4,7 @@ import json
 import sys
 
 from jsonschema._reflect import namedAny
+from compat import (json, urlopen)
 from jsonschema.validators import validator_for
 
 
@@ -14,8 +15,7 @@ def _namedAnyWithDefault(name):
 
 
 def _json_file(path):
-    with open(path) as file:
-        return json.load(file)
+    return json.loads(urlopen(path).read().decode("utf-8"))
 
 
 parser = argparse.ArgumentParser(
